@@ -1,12 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using PlatformDemo.Filters;
-using PlatformDemo.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Core.Models;
 
-namespace PlatformDemo.Controllers
+namespace WebApi.Controllers
 {
     [ApiController]
     [Route("api/{controller}")]
@@ -26,15 +25,6 @@ namespace PlatformDemo.Controllers
 
         [HttpPost]
         public IActionResult Post([FromBody] Ticket ticket)
-        {
-
-            return Ok(ticket);
-        }
-
-        [HttpPost]
-        [Route("/api/v2/{controller}")]
-        [Ticket_EnsureEnteredDate]
-        public IActionResult PostV2([FromBody] Ticket ticket)
         {
 
             return Ok(ticket);
